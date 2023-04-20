@@ -1,0 +1,69 @@
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+.section-task{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+svg{
+    margin-left: 2rem;
+}
+.div-svg{
+    text-align: center;
+}
+.div-task{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 240px;
+}
+p.task{
+    margin: 4px 5px;
+    pointer-events: none;
+}
+
+text{
+    font-size: 8px;
+    stroke: none; 
+    fill: #4479D4;
+    pointer-events: none;
+}
+
+circle{
+    cursor: pointer;
+    opacity: 0;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    padding: 5px 0px;
+    width: 80px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    background-color: #414141;
+    border: 2px solid rgba(0,0,0,0.2);
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    margin: 10px 10px;
+}
+button:active {
+    transform: scale(0.98);
+}
+
+section.section-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 15px;
+}
+span.span-result{
+    background-color: #DBE1F9;
+}
