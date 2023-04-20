@@ -1,0 +1,77 @@
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+.section-task{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-left: 20px;
+    width: 100%;
+}
+svg{
+    margin-left: 2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+form div{
+    width: 200px;
+    margin-bottom: 0.5em;
+}
+input{
+    margin: 5px 5px;
+    border: none;
+    border-color: transparent;
+    border-bottom: 0.12em solid #414141;
+    text-align: center;
+}
+button{
+    margin: 5px 5px;
+}
+section.section-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 15px;
+}
+span.span-result{
+    background-color: #DBE1F9;
+}
+button {
+    all: unset;
+    cursor: pointer;
+    padding: 5px 0px;
+    width: 90px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    background-color: #414141;
+    border: 2px solid rgba(0,0,0,0.2);
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    margin: 10px 10px;
+}
+button:active {
+    transform: scale(0.98);
+    background-color: #000;
+}
+section.section-btn{
+    display: flex;
+    flex-direction: row;
+}
+svg text{
+    font-size: 8px;
+    stroke: none;
+    fill: #414141;
+}
+section.name-vect{
+    display: flex;
+    flex-direction: row;
+}
