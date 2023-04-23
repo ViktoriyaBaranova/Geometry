@@ -1,6 +1,3 @@
-//https://www.youtube.com/watch?v=7JbBr9q4UF8
-//https://www.youtube.com/watch?v=dqqxkrKhfS4
-//https://www.youtube.com/watch?v=-tlb4tv4mC4
 "use strict";
 
 const section = document.querySelector("section");
@@ -24,15 +21,7 @@ const createData = () =>{
         }});
     return randomize(arrItems);
 }
-/*const duplicateArr = (arr, n) =>{
-    let newArr = [];
-    for (let i=0; i<n; i++){
-        newArr = newArr.concat(arr);
-    }
-    return newArr;
-}*/
 
-//card generation function
 const cardGenerator = (cardData) =>{
     cardData.forEach((item) => {
         const card = document.createElement("div");
@@ -47,7 +36,6 @@ const cardGenerator = (cardData) =>{
     });
 };
 
-//check cards
 const checkCards = (e) =>{
     const clickedCard = e.target;
     if (!clickedCard.classList.contains("clicked")){
@@ -64,7 +52,6 @@ const checkCards = (e) =>{
                     card.style.pointerEvents = "none"; //make anclickable element
                     card.classList.add('right');
                 });
-               //countRightPair++; 
             }else{
                 createSyle(flippedFace, 'red');
                 setTimeout(()=>{
@@ -73,7 +60,6 @@ const checkCards = (e) =>{
                 });
                     createSyle(flippedFace, 'transparent');
                 }, 1000);
-                //countRightPair--;
                 count--;
             }
         }
@@ -81,7 +67,6 @@ const checkCards = (e) =>{
         clickedCard.firstChild.style.backgroundColor = 'white';
         clickedCard.classList.remove("clicked");
     }
-    console.log(count);
 }
 
 const createSyle = (flip, str) =>{
@@ -92,15 +77,6 @@ const createSyle = (flip, str) =>{
 
 btnReset.addEventListener('click', ()=>{
      mark = 0;
-    /*let cardData = createData();
-    let faces = document.querySelectorAll(".face");
-    let cards = document.querySelectorAll(".card");
-    createSyle(faces, "white");
-    cardData.forEach((item, index)=>{
-        cards[index].removeAttribute("style");
-        cards[index].setAttribute("name", item.name);
-        faces[index].src = item.imageSrc;
-    });*/
     section.replaceChildren();
     cardGenerator(randomize(cardData));
     spanResult.textContent = "";
