@@ -1,6 +1,3 @@
-//https://www.youtube.com/watch?v=7JbBr9q4UF8
-//https://www.youtube.com/watch?v=dqqxkrKhfS4
-//https://www.youtube.com/watch?v=-tlb4tv4mC4
 "use strict";
 
 const section = document.querySelector("section");
@@ -11,7 +8,7 @@ const condition = document.querySelector(".condition");
 let mark = 0, count = 0;
 
 condition.innerHTML = `<h3>${cond[0]}</h3><p>${cond[1]}</p>`;
-//randomize
+
 const randomize = (arr) =>{
     return [...arr].map(a => ({ value: a, sort: Math.random() })).sort((a, b) => a.sort - b.sort).map(a => a.value);   
 };
@@ -24,15 +21,7 @@ const createData = () =>{
         }});
     return randomize(arrItems);
 }
-/*const duplicateArr = (arr, n) =>{
-    let newArr = [];
-    for (let i=0; i<n; i++){
-        newArr = newArr.concat(arr);
-    }
-    return newArr;
-}*/
 
-//card generation function
 const cardGenerator = (cardData) =>{
     cardData.forEach((item) => {
         const card = document.createElement("div");
@@ -47,7 +36,6 @@ const cardGenerator = (cardData) =>{
     });
 };
 
-//check cards
 const checkCards = (e) =>{
     const clickedCard = e.target;
     if (!clickedCard.classList.contains("clicked")){
@@ -63,8 +51,7 @@ const checkCards = (e) =>{
                     card.classList.remove("clicked");
                     card.style.pointerEvents = "none"; //make anclickable element
                     card.classList.add('right');
-                });
-               //countRightPair++; 
+                }); 
             }else{
                 createSyle(flippedFace, 'red');
                 setTimeout(()=>{
