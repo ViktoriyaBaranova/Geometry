@@ -1,0 +1,7 @@
+const data =[
+    {header: ['A', 'B', 'M'], numMissedCells: 1},
+    {header: ['A', 'B', 'M', 'd'], numMissedCells: 1},
+    {header: ['A', 'B', 'M1', 'lambda'], numMissedCells: 2},
+    {header: ['A', 'B', 'M', 'M1', 'lambda'], numMissedCells: 2},
+    {header: ['A', 'B', 'M', 'M1', 'lambda', 'd'], numMissedCells: 2}
+]
