@@ -1,6 +1,3 @@
-//https://www.youtube.com/watch?v=7JbBr9q4UF8
-//https://www.youtube.com/watch?v=dqqxkrKhfS4
-//https://www.youtube.com/watch?v=-tlb4tv4mC4
 "use strict";
 const score = 10;
 const numberOfCards = 8;
@@ -29,7 +26,6 @@ const createArrNum = ()=>{
     return arr;
 }
 
-//randomize
 const randomize = (arr) =>{
     return [...arr].map(a => ({ value: a, sort: Math.random() })).sort((a, b) => a.sort - b.sort).map(a => a.value);   
 };
@@ -64,7 +60,6 @@ const cardGenerator = (cardData) =>{
     });
 };
 
-//check cards
 const checkCards = (e) =>{
     const clickedCard = e.target;
     if (!clickedCard.classList.contains("clicked")){
@@ -81,7 +76,7 @@ const checkCards = (e) =>{
                     card.lastElementChild.innerHTML = `(${indexPair}) `+ card.lastElementChild.innerHTML;
                     card.classList.add('right');
                 });
-                //countRightPair++; 
+                
                 indexPair++;
                 rightPairs.push(flippedCards);
             }else{
@@ -92,7 +87,7 @@ const checkCards = (e) =>{
                 });
                     createSyle(flippedFace, 'white');
                 }, 1000);
-                //countRightPair--;
+                
             }
             allPairs.push([...flippedCards].map(el=>el.lastElementChild.innerHTML));
         }
@@ -100,7 +95,6 @@ const checkCards = (e) =>{
         clickedCard.firstChild.style.backgroundColor = 'white';
         clickedCard.classList.remove("clicked");
     }
-    //mark = countRightPair <= 0 ? 0 : Math.round(countRightPair * score / numberOfCards);
 }
 
 const createSyle = (flip, str) =>{
@@ -112,15 +106,6 @@ const createSyle = (flip, str) =>{
 
 btnReset.addEventListener('click', ()=>{
     mark = 0, countRightInput = 0, rightPairs = [], allInputs = [], allPairs = [];
-    //let cardData = createData();
-   /* let faces = document.querySelectorAll(".face");
-    let cards = document.querySelectorAll(".card");
-    createSyle(faces, "white");
-    cardData.forEach((item, index)=>{
-        cards[index].removeAttribute("style");
-        cards[index].setAttribute("name", item.name);
-        faces[index].innerHTML = item.txt;
-    });*/
     section.replaceChildren();
     form.replaceChildren();
     cardGenerator(randomize(cardData));
@@ -140,7 +125,6 @@ btnCheck.addEventListener('click', ()=>{
     mark = res <= 0 ? 0 : Math.round(res * score / numberOfCards);
     spanResult.textContent = "Результат: " + mark + " из " + score;
     console.log(allPairs, allInputs);
-    console.log(mark);
 });
 
 let cardData = createData();
