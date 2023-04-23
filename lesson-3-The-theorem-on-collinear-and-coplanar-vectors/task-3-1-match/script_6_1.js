@@ -7,7 +7,6 @@ const sectionMatching = document.querySelector(".matching-elements");
 const condition = document.querySelector(".condition");
 const btnCheck = document.querySelector(".check-btn");
 const btnRestart = document.querySelector(".restart-btn");
-const btnBack = document.querySelector(".back-btn");
 const strResult = document.querySelector(".result");
 const score = 10;
 let count, mark, cardData, fieldData;
@@ -83,7 +82,7 @@ const drop = (event) =>{
     }
 };
 
-//const cardData = randomize(data).slice(0, totalDraggableItems); //totalMatchingPairs
+
 matchingGenerator();
 commitMatching();
 
@@ -102,7 +101,7 @@ btnCheck.addEventListener('click', ()=>{
     //save data web page
     cond.sectionDraggable = sectionDraggable.querySelectorAll(".draggable");
     cond.sectionMatching = sectionMatching.querySelectorAll(".draggable");
-});
+})
 
 btnRestart.addEventListener('click', ()=>{
     count = 0;
@@ -113,32 +112,5 @@ btnRestart.addEventListener('click', ()=>{
         sectionDraggable.append(item);
     });
     strResult.textContent = "";
-});
-
-btnBack.addEventListener('click', ()=>{
-    console.log("cond", cond);
-    const uniqueName = new Set(), uniqueText = new Set();
-    
-    condition.innerHTML = `<h3>${cond.header}</h3><img src="${cond.img}"/><p>${cond.condition}</p>`;
-    
-    [...cond.sectionDraggable].forEach(el=>{
-        sectionDraggable.append(el);
-    });
-    //remember objects with the same value
-    [...cond.fieldData].forEach((item)=>{
-        uniqueName.add(item.name);
-        uniqueText.add(item.text);
-    });
-    //create fields for insertion
-    [...uniqueName].forEach((item, ind)=>{
-        const element = document.createElement("div");
-        element.classList.add('matching-element');
-        element.innerHTML = `<span class="label">${[...uniqueText][ind]}</span><span class="droppable" drop-id="${item}"></span>`;
-        sectionMatching.appendChild(element);
-        const el = element.querySelector("span.droppable");
-        el.appendChild(cond.sectionMatching[ind]);
-    });
-    
-    commitMatching();
-});
+})
 
