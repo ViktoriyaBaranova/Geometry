@@ -1,7 +1,6 @@
 "use strict";
 const btnCheck = document.querySelector(".check");
 const btnReset = document.querySelector(".reset");
-const btnBack = document.querySelector(".back");
 const condition = document.querySelector(".condition");
 const spanResult = document.querySelector(".span-result");
 var svg = document.getElementById('pic'); 
@@ -148,15 +147,6 @@ btnReset.addEventListener("click", () => {
         el.setAttribute('stroke', '#E0E0E0');
     });
     spanResult.textContent = "";
-});
-
-btnBack.addEventListener("click", () => {
-    const vectors = svg.querySelectorAll('.vector');
-    [...vectors].forEach((el, ind)=>{
-        el.setAttribute('stroke', userColorAnswer[ind]);
-    });
-    spanResult.textContent = mark;
-    console.log("btnBack", count);
 });
 
 const variant = randomInt(0, data.length-1);
