@@ -1,7 +1,6 @@
 "use strict";
 const btnCheck = document.querySelector(".check");
 const btnRestart = document.querySelector(".restart");
-const btnBack = document.querySelector(".back");
 const condition = document.querySelector(".condition");
 const spanResult = document.querySelector('.span-result');
 var svg = document.getElementById('pic'); 
