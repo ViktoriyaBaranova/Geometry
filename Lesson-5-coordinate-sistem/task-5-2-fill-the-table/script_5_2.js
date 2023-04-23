@@ -4,7 +4,6 @@ const numberOfRows = 4, score = 10;
 let count = 0, mark = 0; 
 let table = document.querySelector('table');
 const btnCheck = document.querySelector(".check");
-const btnBack = document.querySelector(".back");
 const btnReset = document.querySelector(".reset");
 const spanResult = document.querySelector('.span-result');
 
@@ -105,16 +104,6 @@ btnCheck.addEventListener('click', ()=>{
     data[num].mark = mark;
     spanResult.textContent = "Результат: " + mark + " из " + score;
     console.log('check', data[num]);
-    //console.log(count, mark);
-});
-
-btnBack.addEventListener('click', ()=>{
-    console.log('back', data[num]);
-
-    const arrInputs = document.querySelectorAll('input');
-    let numInput = 0;
-    data[num].userAnsw = [...arrInputs].map(el=> el.value); 
-    createTable(data[num].userAnsw);
 });
 
 btnReset.addEventListener('click', ()=>{
