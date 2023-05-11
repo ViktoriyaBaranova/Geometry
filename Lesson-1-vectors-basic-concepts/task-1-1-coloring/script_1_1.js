@@ -127,16 +127,20 @@ function rgb2hex(rgb) {
 btnCheck.addEventListener("click", () => {
     count = 0, mark = 0;
     userColorAnswer = [];
+    let taskColor = [];
     const vectors = svg.querySelectorAll('.vector');
     [...vectors].forEach((el, ind)=>{
         const index = data[variant].vectors[ind][4];
         const elem = rgb2hex(el.getAttribute('stroke')).toUpperCase();
         count += elem === data[variant].colors[index]? 1 : -1;
         userColorAnswer.push(elem);
+        taskColor.push(data[variant].colors[index]);
     });
     mark = count <= 0 ? 0 : Math.round(count * score / data[variant].vectors.length);
     spanResult.textContent = "Результат: " + mark + " из " + score;
-    console.log("btnCheck", count, userColorAnswer);
+    data[variant].userAnswers = userColorAnswer;
+    data[variant].taskAnswers = taskColor;
+    console.log(data[variant]);
 });
 
 btnReset.addEventListener("click", () => {
@@ -151,3 +155,7 @@ btnReset.addEventListener("click", () => {
 
 const variant = randomInt(0, data.length-1);
 createTask();
+
+const returnTaskAnswers = ()=>{
+    return [data[variant].userAnswers, data[variant].taskAnswers]
+}
