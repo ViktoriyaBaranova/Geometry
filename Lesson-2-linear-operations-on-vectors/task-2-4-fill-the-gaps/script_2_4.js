@@ -70,6 +70,7 @@ if (arrAnswForJF)
 
 btnCheck.addEventListener("click", () => {
     answer = [], count = 0;
+    dataCondition.mainCondition[num_task].taskAnswers = arrAnswForSolution;
     for(let i=0; i<arrAnswForSolution.length; i++){
         answer[i] = arrDisplayInput[i].value;
         if (answer[i] == arrAnswForSolution[i]) count++;
@@ -77,5 +78,9 @@ btnCheck.addEventListener("click", () => {
     dataCondition.mainCondition[num_task].userAnswer = answer;
     mark = Math.round(count * dataCondition.max_score / arrAnswForSolution.length);
     spanResult.textContent = "Результат: " + mark + " из " + dataCondition.max_score;
-    console.log(answer, count, mark);
+    console.log("cond", dataCondition.mainCondition[num_task], answer, count, mark);
 });
+
+const returnTaskAnswers = ()=>{
+    return [dataCondition.mainCondition[num_task].userAnswer, dataCondition.mainCondition[num_task].taskAnswers]
+}
