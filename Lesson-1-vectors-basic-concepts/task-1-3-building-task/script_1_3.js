@@ -146,6 +146,7 @@ const coordVect = (arr)=>{
 
 btnCheck.addEventListener("click", () => {
     let count = 0, mark = 0;
+    let taskAnswers = [];
     const coordCondVect = coordVect([conditionVect]);
     const coordUserVect = coordVect(data[variant].userVect);
     if (data[variant].condition[2] === "равные"){
@@ -162,6 +163,8 @@ btnCheck.addEventListener("click", () => {
     mark = count <= 0 ? 0 : Math.round(count * score / data[variant].numberOfAnswVect);
     spanResult.textContent = "Результат: " + mark + " из " + score;
     console.log(data, count, mark, coordCondVect, coordUserVect, data[variant].userVect);
+    data[variant].userAnswers = coordUserVect;
+    data[variant].taskAnswers = coordCondVect;
 });
 
 btnReset.addEventListener("click", () => {
@@ -176,3 +179,7 @@ btnReset.addEventListener("click", () => {
 
 draw_svg_grid();
 draw_svg_picture();
+
+const returnTaskAnswers = ()=>{
+    return [data[variant].userAnswers, data[variant].taskAnswers]
+}
