@@ -258,3 +258,7 @@ btnCancel.addEventListener("click", () => {
 var pt = svg.createSVGPoint();
 draw_svg_grid();
 createTask();
+
+const returnTaskAnswers = ()=>{
+    return [data[variant].userVectors, data[variant].taskVectors]
+}
