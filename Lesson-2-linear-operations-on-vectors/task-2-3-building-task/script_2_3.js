@@ -234,7 +234,7 @@ const createTask=()=>{
     if (task[0]=== task[1] && operation[variant] === "-") 
         [currentNameOfPoints, task] = dataTask(data.namePoint, currentNumberOfPoints);
     data.task = task;
-    condition.innerHTML = `<h2>Задание 2.3. Сумма и разность векторов</h2><p>Дана фигура. Постройте следующие векторы: ${task[0]} ${operation[variant]} ${task[1]}</p><section class="section-progress"><progress value="0" max="10"></progress><p>Задание №${progressValue + 1} / ${data.numberOfTask}</section><button class="null-vector">Нулевой вектор</button>`;
+    condition.innerHTML = `<div><h2>Задание 2.3. Сумма и разность векторов</h2><p>Дана фигура. Постройте следующие векторы: ${task[0]} ${operation[variant]} ${task[1]}</p></div><section class="section-progress"><progress value="0" max="10"></progress><p>Задание №${progressValue + 1} / ${data.numberOfTask}</section><button class="null-vector">Нулевой вектор</button>`;
     
     btnNullVect = document.querySelector('.null-vector');
     btnNullVect.addEventListener("click", () => {
@@ -283,3 +283,7 @@ var pt = svg.createSVGPoint();
 const operation = ["+", "-"];
 draw_svg_grid();
 createTask();
+
+const returnTaskAnswers = ()=>{
+    return [data.userVectors, data.taskVectors]
+}
