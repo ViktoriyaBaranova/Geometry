@@ -262,3 +262,7 @@ var pt = svg.createSVGPoint();
 const task = ["вектор суммы для векторов, изображенных на рисунке", "вектор a - b", "вектор b - a"];
 draw_svg_grid();
 createTaskVect();
+
+const returnTaskAnswers = ()=>{
+    return [data[variant].userVectors, data[variant].taskVectors]
+}
